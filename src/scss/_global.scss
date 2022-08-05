@@ -4,6 +4,109 @@
     padding: 0;
 }
 
+:root {
+    font-size: 15px;
+    color: $c_text_paragraph;
+    font-family: 'Inter', sans-serif;
+}
+
 body {
-    background-color: $test-color;
+    background-color: $c_bg_body;
+    display: flex;
+    justify-content: center;
+}
+
+.card {
+    background-color: $c_bg_card;
+    width: calc(100% - 50px);
+    min-width: 327px;
+    max-width: 600px;
+    border-radius: 10px;
+    margin: 15vh 0;
+    display: flex;
+    flex-direction: column;
+
+    .hero {
+        width: 100%;
+        border-top-left-radius: 10px;
+        border-top-right-radius: 10px;
+        overflow: hidden;
+        position: relative;
+
+        .mobile-img, .desktop-img {
+            width: 100%;
+            filter: contrast(80%);
+        }
+
+        .mobile-img {
+            display: block;
+        }
+
+        .desktop-img {
+            display: none;
+        }
+
+        .filter {
+            position: absolute;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            background-color:lighten($c_text_accentuate, 2%);
+            mix-blend-mode: multiply;
+        }
+    }
+
+    .card-infos {
+        padding: 2rem;
+        text-align: center;
+
+        h1 {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: $c_text_heading_main;
+            margin-top: 0.5rem;
+            margin-bottom: 1.3rem;
+
+            span {
+                color: $c_text_accentuate;
+            }
+        }
+
+        .card-description {
+            font-weight: 200;
+            line-height: 1.6rem;
+            letter-spacing: 0.02rem;
+            margin-bottom: 2.7rem;
+        }
+
+        .stats-wrapper {
+            display: flex;
+            flex-direction: column;
+
+            .number {
+                font-weight: 700;
+                font-size: 1.6rem;
+                color: $c_text_heading_main;
+                margin-bottom: 0.4rem;
+            }
+
+            .topic {
+                font-family: 'Lexend Deca', sans-serif;
+                font-size: 0.8rem;
+                text-transform: uppercase;
+                font-weight: 200;
+                color: $c_text_stat_topic;
+                letter-spacing: 0.1rem;
+            }
+
+            div:nth-child(1), div:nth-child(2) {
+                margin-bottom: 2rem;
+            }
+
+            div:nth-child(3) {
+                margin-bottom: 0.4rem;
+            }
+        }
+    }
 }
